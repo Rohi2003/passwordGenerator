@@ -1,79 +1,55 @@
-# passwordGenerator
+# Secure Password Generator
+
+A simple and secure password generator implemented in JavaScript for use in web applications.
+
+
 #Site is live at https://rohi2003.github.io/passwordGenerator/
 
 📸 Screenshots
 <img width="960" alt="image" src="https://github.com/Rohi2003/passwordGenerator/assets/87049122/7a41b6fa-5960-4680-9763-49ab3339408e">
 
-User Interface Elements:
-inputSlider: Represents an input element for selecting the password length.
+## Features
 
-lengthDisplay: Displays the current password length selected by the user.
+- Generate secure passwords with various options.
+- Adjustable password length using a slider.
+- Copy generated passwords to the clipboard.
+- Password strength indicator.
 
-passwordDisplay: Displays the generated password.
+## Usage
 
-copyBtn: Button to copy the generated password to the clipboard.
+1. Open `index.html` in your web browser.
+2. Adjust the password length using the slider.
+3. Check/uncheck options for including uppercase, lowercase, numbers, and symbols.
+4. Click the "Generate" button to generate a secure password.
+5. Click the "Copy" button to copy the generated password to the clipboard.
 
-copyMsg: Message element to indicate whether the password copy was successful or failed.
+## Options
 
-Checkboxes (uppercaseCheck, lowercaseCheck, numbersCheck, symbolsCheck): Allow the user to choose which types of characters to include in the password.
+- **Uppercase:** Include uppercase letters in the password.
+- **Lowercase:** Include lowercase letters in the password.
+- **Numbers:** Include numbers in the password.
+- **Symbols:** Include symbols in the password.
 
-indicator: Represents a visual indicator of password strength.
+## Password Strength Indicator
 
-generateBtn: Button to trigger the password generation process.
+The password strength indicator provides feedback based on selected options and password length:
 
-Variables:
-password: Stores the generated password.
+- Green: Strong password (Uppercase, lowercase, numbers/symbols, and length >= 8).
+- Yellow: Moderate password (Uppercase/lowercase, numbers/symbols, and length >= 6).
+- Red: Weak password (Either uppercase or lowercase, and either numbers or symbols, or length < 6).
 
-passwordLength: Represents the length of the password (default value is 10).
+## Copying to Clipboard
 
-checkCount: Tracks the number of checkbox options selected by the user.
+Clicking the "Copy" button copies the generated password to the clipboard. A message will indicate if the operation was successful.
 
-Functions:
-handleSlider: Updates the UI elements when the password length slider is adjusted.
 
-setIndicator: Sets the visual indicator color based on password strength.
+## Acknowledgments
 
-getRndInteger: Generates a random integer within a specified range.
+- Password generation inspired by [Fisher Yates Method](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle).
 
-Functions (generateRandomNumber, generateLowerCase, generateUpperCase, generateSymbol): Generate random characters based on user preferences.
+## Author
 
-calcStrength: Calculates and sets the password strength indicator based on selected options.
+Rohit kumar
 
-copyContent: Copies the generated password to the clipboard and displays a message indicating success or failure.
 
-shufflePassword: Shuffles the characters of the generated password for added security.
 
-handleCheckBoxChange: Handles changes in checkbox states and updates the checkCount variable accordingly.
-
-Event Listeners:
-Listens for changes in checkbox states to update the checkCount.
-
-Listens for changes in the password length slider to update the passwordLength.
-
-Listens for clicks on the copy button to trigger the password copy function.
-
-Listens for clicks on the generate button to initiate the password generation process.
-
-Password Generation Logic:
-Uses an array (funcArr) to store functions corresponding to selected character types.
-
-Generates a password by concatenating characters based on selected options and ensuring at least one character from each selected type.
-
-Shuffles the generated password for added security.
-
-UI Updates:
-
-Updates the password display in the UI.
-
-Calculates and displays the password strength indicator.
-
-Clipboard Interaction->
-Uses the Clipboard API to copy the generated password to the clipboard.
-
-Error Handling->
-Handles errors during the copy operation and displays a corresponding message.
-User Interaction->
-Provides visual feedback to the user when copying the password or adjusting settings.
-
-Randomization->
-Uses randomization functions to introduce variability in password generation.
